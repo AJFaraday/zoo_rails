@@ -1,0 +1,25 @@
+<h1>All of the Species</h1>
+
+<table>
+  <thead> 
+    <tr>
+      <th>Name</th>
+      <th>Latin Name</th>
+      <th>Legs</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @species.each do |species| %>
+      <tr>
+        <td><%= link_to species.name, species_url(species) %></td>
+        <td><%= species.latin_name %></td>
+        <td><%= species.no_of_legs %></td>
+        <td>
+          <%= link_to 'Edit', edit_species_url(species) %>
+          <%= link_to 'DESTROY', species_url(species), :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

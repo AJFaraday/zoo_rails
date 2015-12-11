@@ -1,0 +1,29 @@
+<h1>Editing <%= @species.name %></h1>
+
+
+<% if flash[:error] %>
+  <p style='color:red;'>
+    <%= flash[:error] %>
+    <br/>
+    <%= @species.errors.full_messages.join(" - ") %>
+  </p>
+<% end %>
+
+
+<%= form_for(@species) do |form| %>
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :latin_name %>
+    <%= form.text_field :latin_name %>
+  </p>
+  <p>
+    <%= form.label :no_of_legs %>
+    <%= form.text_field :no_of_legs %>
+  </p>
+
+  <%= form.submit %>
+<% end %>
+
