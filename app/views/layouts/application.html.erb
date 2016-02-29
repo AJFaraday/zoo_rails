@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ZooRails</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
+  <head>
+    <title>ZooRails</title>
+    <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
 
-<h1>My Awesome Animal App!</h1>
+    <h1>My Awesome Animal App!</h1>
 
-<div class=menu>
-  <ul>
-    <li><%= link_to 'All Species', species_index_path %></li>
-    <li><%= link_to 'New Species', new_species_path %></li>
-  </ul>
-</div>
+    <div class=menu>
+      <ul>
+        <li><%= link_to 'All Species', species_index_path %></li>
+        <li><%= link_to 'All Animals', animals_path %></li>
+        <li><%= link_to 'New Species', new_species_path %></li>
+        <li><%= link_to 'New Animal', new_animal_path %></li>
+      </ul>
+    </div>
 
-<%= yield %>
+    <% if flash[:notice] %>
+      <p style="color:green;">
+        <%= flash[:notice] %>
+      </p>
+    <% end %>
 
-</body>
+    <%= yield %>
+
+  </body>
 </html>

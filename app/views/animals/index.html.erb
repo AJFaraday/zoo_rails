@@ -1,0 +1,40 @@
+<h1>All of the animals!</h1>
+
+<% @species.each do |species| %>
+  <h2><%= species.name.pluralize %></h2>
+
+  <% if species.animals.any? %>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Date of Birth</th>
+          <th>Last Fed</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% species.animals.each do |animal| %>
+          <tr>
+            <td><%= link_to animal.name, animal_url(animal) %></td>
+            <td><%= age_of_animal(animal) %></td>
+            <td>
+              <% if animal.last_fed %>
+                <%= time_ago_in_words(animal.last_fed) %> Ago
+              <% else %>
+                NEVER
+              <% end %>
+            </td>
+            <td>
+              <%= link_to 'Feed', feed_animal_url(animal) %>
+              <%= link_to 'edit', edit_animal_url(animal) %>
+              <%= link_to 'DESTROY', animal_url(animal), :method => :delete %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>There are no <%= species.name.pluralize %>.</p>
+  <% end %>
+<% end %>

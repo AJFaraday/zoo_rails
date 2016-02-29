@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151127154107) do
+ActiveRecord::Schema.define(:version => 20160229092322) do
+
+  create_table "animals", :force => true do |t|
+    t.string   "name"
+    t.integer  "species_id",    :precision => 38, :scale => 0
+    t.datetime "date_of_birth"
+    t.datetime "last_fed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "species", :force => true do |t|
     t.string   "name"

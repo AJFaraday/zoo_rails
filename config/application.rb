@@ -38,5 +38,8 @@ module ZooRails
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    # as advised by http://stackoverflow.com/questions/16044008/no-implicit-conversion-of-nil-into-string
+    ActionController::Base.config.relative_url_root = ''
   end
 end

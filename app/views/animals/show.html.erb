@@ -1,0 +1,19 @@
+<h1>Animal: <%= @animal.name %></h1>
+
+<dl>
+  <dt>Date of Birth</dt>
+  <dd><%= @animal.date_of_birth %></dd>
+
+  <dt>Age</dt>
+  <dd><%= age_of_animal(@animal) %></dd>
+
+  <dt>Last Fed</dt>
+  <dd>
+    <% if @animal.last_fed %>
+      <%= time_ago_in_words(@animal.last_fed) %> Ago
+    <% else %>
+      NEVER
+    <% end %>
+  </dd>
+
+</dl>

@@ -10,6 +10,8 @@ gem 'activerecord-oracle_enhanced-adapter', '= 1.4.2.50'
 
 gem 'passenger'
 
+gem 'test-unit'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
