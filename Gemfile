@@ -12,6 +12,11 @@ gem 'passenger'
 
 gem 'test-unit'
 
+gem 'rspec'
+gem 'rspec-rails'
+
+gem 'capybara'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

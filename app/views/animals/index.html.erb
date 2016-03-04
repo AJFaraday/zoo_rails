@@ -1,10 +1,12 @@
 <h1>All of the animals!</h1>
 
 <% @species.each do |species| %>
-  <h2><%= species.name.pluralize %></h2>
+  <h2 class="page_title">
+    <%= species.name.pluralize %>
+  </h2>
 
   <% if species.animals.any? %>
-    <table>
+    <table class="index_table">
       <thead>
         <tr>
           <th>Name</th>

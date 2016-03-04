@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+dog:
+  id: 1
+  name: Dog
+  latin_name: Canis Canis
+  no_of_legs: 4
+
+cat:
+  id: 2
+  name: Cat
+  latin_name: Felis Cattus
+  no_of_legs: 4
